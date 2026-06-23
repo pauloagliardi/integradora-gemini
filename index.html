@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>integradora.api</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Meu Cliente de Ia com Gemini</h1>
+     
+    <label for="txtprompt">digite o seu prompt</label>
+     <textarea id="txtprompt" placeholder="Escreva aqui..."></textarea>
+
+        <button onclick="enviarrequisicao()">enviar para o gemini</button>
+
+         <h3>Resposta Gemini</h3>
+
+          <div id="txtresposta">aguardando envio</div>
+           <script src="validacoes.js"></script>
+          <script src="app.js"></script>
+
+  </div>  
+
+
+
+</body>
+</html>
