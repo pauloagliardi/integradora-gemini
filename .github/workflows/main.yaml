@@ -1,6 +1,7 @@
 name: Integracao Continua - IMC
 
-on: [push] # Gatilho para execução automática a cada push
+on:
+  push:   # Gatilho para execução automática a cada push
 
 jobs:
   executar-testes-em-nuvem:
