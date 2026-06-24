@@ -1,12 +1,21 @@
-ame: Integracao Continua - IMC 
-on: [push] # Gatilho para execucao automatica a cada nova subida (push) 
-jobs: 
-executar-testes-em-nuvem: 
-runs-on: ubuntu-latest # Acorda uma máquina Linux Linux Ubuntu zerada na nuvem 
-steps: - name: Passo 1 - Baixar o codigo atualizado do repositorio para o servidor 
-uses: actions/checkout@v3 - name: Passo 2 - Configurar o ecossistema do Node.js na maquina virtual 
-uses: actions/setup-node@v3 
-with: 
-node-version: 18 - name: Passo 3 - Instalar de forma limpa Jest e as dependencias no servidor 
-run: npm install - name: Passo 4 - Disparar de forma obrigatoria a suite de testes 
-run: npm test 
+name: Integracao Continua - IMC
+
+on: [push] # Gatilho para execução automática a cada push
+
+jobs:
+  executar-testes-em-nuvem:
+    runs-on: ubuntu-latest # Máquina Linux Ubuntu na nuvem
+    steps:
+      - name: Passo 1 - Baixar o código atualizado do repositório
+        uses: actions/checkout@v3
+
+      - name: Passo 2 - Configurar o ecossistema do Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Passo 3 - Instalar dependências e Jest
+        run: npm install
+
+      - name: Passo 4 - Executar a suíte de testes
+        run: npm test
