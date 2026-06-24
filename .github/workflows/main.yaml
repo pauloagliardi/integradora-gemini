@@ -1,6 +1,7 @@
 name: Integracao Continua - IMC
 
-on: [push]
+on:
+  push:
 
 jobs:
   executar-testes-em-nuvem:
