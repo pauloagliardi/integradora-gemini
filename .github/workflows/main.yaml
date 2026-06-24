@@ -1,11 +1,11 @@
 name: Integracao Continua - IMC
 
-on:
-  push:   
+on: [push]
 
 jobs:
   executar-testes-em-nuvem:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+
     steps:
       - name: Passo 1 - Baixar o código atualizado do repositório
         uses: actions/checkout@v3
@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: Passo 3 - Instalar dependências e Jest
+      - name: Passo 3 - Instalar Jest e dependências
         run: npm install
 
       - name: Passo 4 - Executar a suíte de testes
